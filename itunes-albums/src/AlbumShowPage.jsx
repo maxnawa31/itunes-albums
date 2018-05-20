@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 export default class AlbumShowPage extends Component {
   render() {
@@ -8,7 +7,7 @@ export default class AlbumShowPage extends Component {
       foundAlbum = this.props.firstHalfOfAlbums.filter((album,index) => {
         return index === parseInt(this.props.index);
       })[0];
-    }else if(this.props.index > 49){
+    }else if(this.props.index > 49) {
       foundAlbum = this.props.secondHalfOfAlbums.filter((album,index) => {
         return index === parseInt(this.props.index) - 50;
       })[0];

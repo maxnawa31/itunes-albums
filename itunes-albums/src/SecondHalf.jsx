@@ -9,7 +9,7 @@ export default class SecondHalf extends Component {
     return(
       <div>
         <div>{secondHalfAlbums}</div>
-        <Link to = '/'>Click here to go back to first 50 albums</Link>
+        <Link to = "/">Click here to go back to first 50 albums</Link>
       </div>
     )
   }

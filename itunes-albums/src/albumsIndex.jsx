@@ -14,7 +14,6 @@ export default class AlbumsIndex extends Component {
           const secondHalf = result.feed.entry.slice(Math.ceil(result.feed.entry.length / 2), result.feed.entry.length);
           this.props.setAlbumState(firstHalf, secondHalf);
           this.props.setHasData();
-          console.log(result)
         });
     }
   }
@@ -29,7 +28,7 @@ export default class AlbumsIndex extends Component {
       <div>
         <div>{albumsFirstHalf}</div>
         <div>
-          <Link to = '/second-half'>Click here to see next 50 albums</Link>
+          <Link to = "/second-half">Click here to see next 50 albums</Link>
         </div>
       </div>
     );
