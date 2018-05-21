@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import './App.css';
 
 export default class AlbumShowPage extends Component {
   render() {
-    let foundAlbum = '';
+    let foundAlbum = 'loading...';
     if (this.props.index <= 49) {
       foundAlbum = this.props.firstHalfOfAlbums.filter((album,index) => {
         return index === parseInt(this.props.index);
       })[0];
-    }else if(this.props.index > 49) {
+    } else if(this.props.index > 49) {
       foundAlbum = this.props.secondHalfOfAlbums.filter((album,index) => {
         return index === parseInt(this.props.index) - 50;
       })[0];
     }
     return (
-      <div>
+      <div className="album-show">
         <div>
-          Artist:{foundAlbum['im:artist']['label']}
+          Artist: {foundAlbum['im:artist']['label']}
         </div>
         <div>
           Genre: {foundAlbum['category']['attributes']['term']}
@@ -25,7 +26,7 @@ export default class AlbumShowPage extends Component {
           Price : {foundAlbum['im:price']['label']}
         </div>
         <div>
-          <img src={`${foundAlbum['im:image'][0]['label']}`} alt="" />
+          <img src={`${foundAlbum['im:image'][2]['label']}`} alt="" />
         </div>
       </div>
     );

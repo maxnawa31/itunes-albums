@@ -11,18 +11,20 @@ export default class SecondHalf extends Component {
           const secondHalf = result.feed.entry.slice(Math.ceil(result.feed.entry.length / 2), result.feed.entry.length);
           this.props.setAlbumState(firstHalf, secondHalf);
           this.props.setHasData();
+          console.log(result);
         });
     }
     window.scrollTo(0, 0);
   }
 
   render() {
-    let secondHalfAlbums = '';
+    let secondHalfAlbums = 'loading';
+    let nextLink = '';
     if (this.props.secondHalfOfAlbums !== null) {
       secondHalfAlbums = this.props.secondHalfOfAlbums.map((album, index) => {
         return (
           <div className="individual-album">
-            <Link to ={`/albums/${index}`} >
+            <Link to ={`/albums/${index + 50}`} >
               <img
                 className="album-cover"
                 src={`${album['im:image'][2]['label']}`}
@@ -34,7 +36,7 @@ export default class SecondHalf extends Component {
           </div>
         );
       });
-
+      nextLink = <Link to="/">Click here to see the first 50 albums</Link>;
     }
 
     return (
@@ -42,7 +44,7 @@ export default class SecondHalf extends Component {
         <h1 className="headline">Top 100 Albums</h1>
         <div className="album-container">{secondHalfAlbums}</div>
         <div className="link-to-next">
-          <Link to="/">Click here to see the first 50 albums</Link>
+          {nextLink}
         </div>
       </div>
     );

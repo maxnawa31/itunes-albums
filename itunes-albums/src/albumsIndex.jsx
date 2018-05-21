@@ -17,7 +17,7 @@ export default class AlbumsIndex extends Component {
     window.scrollTo(0, 0);
   }
   render() {
-    let albumsFirstHalf = '';
+    let albumsFirstHalf = 'loading';
     if (this.props.firstHalfOfAlbums !== null) {
       albumsFirstHalf = this.props.firstHalfOfAlbums.map((album, index) => {
         return (

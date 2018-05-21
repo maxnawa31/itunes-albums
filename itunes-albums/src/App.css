@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+body{
+  background-color: #080400;
+}
 .App {
   text-align: center;
 }
@@ -29,7 +32,22 @@
 
 .album-cover{
   border-radius:2%;
+  animation: fadein 2s;
 }
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.album-show {
+  position:absolute;
+  color: white;
+  font-family: "Lato";
+  text-align:center;
+  top: 29%;
+  left: 42%;
+}
+
 
 .individual-album{
   margin-top: 20px;
@@ -43,6 +61,8 @@
 
 .headline{
   margin-left:40px;
+  animation: fadein 2s;
+  color:white;
 }
 
 .link-to-next{
@@ -53,7 +73,7 @@
 
 .link-to-next a {
   text-decoration: none;
-  color:#222;
+  color:white;
 }
 
 .individual-album p {
@@ -67,14 +87,16 @@
   text-align: center;
   font-family: 'Lato';
   font-weight:lighter;
-  color: rgb(1,1,1);
+  color: white;
+  animation: fadein 2s;
 }
 
 .album-text{
   text-align: center;
   font-family: 'Lato';
   font-weight:lighter;
-  color: rgb(142,142,142);
+  color: white;
+  animation: fadein 2s;
 }
 
 .App-intro {
