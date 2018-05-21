@@ -42,7 +42,13 @@ export default class App extends Component {
           <Route
             path="/second-half"
             component={props => (
-              <SecondHalf secondHalfOfAlbums={this.state.secondHalf} />
+              <SecondHalf
+                secondHalfOfAlbums={this.state.secondHalf}
+                setHasData={this.setHasData}
+                currentState={this.state.hasData}
+                setAlbumState={this.getAllAlbums}
+                firstHalfOfAlbums={this.state.firstHalf}
+              />
             )}
           />
           <Route

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 .App {
   text-align: center;
 }
@@ -16,6 +18,63 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.album-container{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  margin-left:20px;
+}
+
+.album-cover{
+  border-radius:2%;
+}
+
+.individual-album{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.individual-album a {
+  text-decoration: none;
+}
+
+.headline{
+  margin-left:40px;
+}
+
+.link-to-next{
+  text-align:center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.link-to-next a {
+  text-decoration: none;
+  color:#222;
+}
+
+.individual-album p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+
+}
+.artist-text{
+  text-align: center;
+  font-family: 'Lato';
+  font-weight:lighter;
+  color: rgb(1,1,1);
+}
+
+.album-text{
+  text-align: center;
+  font-family: 'Lato';
+  font-weight:lighter;
+  color: rgb(142,142,142);
 }
 
 .App-intro {
