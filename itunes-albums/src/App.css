@@ -62,7 +62,7 @@ body{
 .headline{
   margin-left:40px;
   animation: fadein 2s;
-  color:white;
+  color: goldenrod;
 }
 
 .link-to-next{
@@ -95,7 +95,7 @@ body{
   text-align: center;
   font-family: 'Lato';
   font-weight:lighter;
-  color: white;
+  color: goldenrod;
   animation: fadein 2s;
 }
 

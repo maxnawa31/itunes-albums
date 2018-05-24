@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import CardComponent from './CardComponent';
 export default class SecondHalf extends Component {
   componentDidMount() {
     if (!this.props.currentState) {
@@ -23,20 +23,14 @@ export default class SecondHalf extends Component {
     if (this.props.secondHalfOfAlbums !== null) {
       secondHalfAlbums = this.props.secondHalfOfAlbums.map((album, index) => {
         return (
-          <div className="individual-album">
-            <Link to ={`/albums/${index + 50}`} >
-              <img
-                className="album-cover"
-                src={`${album['im:image'][2]['label']}`}
-                alt=""
-              />
-              <p className="artist-text">{album['im:artist']['label']}</p>
-              <p className="album-text">{album['im:name']['label']}</p>
-            </Link>
-          </div>
+          <CardComponent
+            linkSrc={`/albums/${index + 50}`}
+            src={`${album['im:image'][2]['label']}`}
+            artistText={album['im:artist']['label']}
+            albumText={album['im:name']['label']}
+          />
         );
       });
-      nextLink = <Link to="/">Click here to see the first 50 albums</Link>;
     }
 
     return (
@@ -44,7 +38,7 @@ export default class SecondHalf extends Component {
         <h1 className="headline">Top 100 Albums</h1>
         <div className="album-container">{secondHalfAlbums}</div>
         <div className="link-to-next">
-          {nextLink}
+        <Link to="/">{"<"}</Link>
         </div>
       </div>
     );

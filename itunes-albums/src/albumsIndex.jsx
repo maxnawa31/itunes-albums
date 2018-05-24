@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import CardComponent from './CardComponent';
 import './App.css';
 
 export default class AlbumsIndex extends Component {
@@ -21,17 +22,12 @@ export default class AlbumsIndex extends Component {
     if (this.props.firstHalfOfAlbums !== null) {
       albumsFirstHalf = this.props.firstHalfOfAlbums.map((album, index) => {
         return (
-          <div className="individual-album">
-            <Link to ={`/albums/${index}`} >
-              <img
-                className="album-cover"
-                src={`${album['im:image'][2]['label']}`}
-                alt=""
-              />
-              <p className="artist-text">{album['im:artist']['label']}</p>
-              <p className="album-text">{album['im:name']['label']}</p>
-            </Link>
-          </div>
+          <CardComponent
+            linkSrc={`/albums/${index}`}
+            src={`${album['im:image'][2]['label']}`}
+            artistText={album['im:artist']['label']}
+            albumText={album['im:name']['label']}
+          />
         );
       });
     }
@@ -40,7 +36,7 @@ export default class AlbumsIndex extends Component {
         <h1 className="headline">Top 100 Albums</h1>
         <div className="album-container">{albumsFirstHalf}</div>
         <div className="link-to-next">
-          <Link to = "/second-half">Click here to see next 50 albums</Link>
+          <Link to = "/second-half">{'>'}</Link>
         </div>
       </div>
     );
