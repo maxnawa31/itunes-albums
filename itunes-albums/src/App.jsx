@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import AlbumsIndex from './albumsIndex';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import SecondHalf from './SecondHalf';
 import AlbumShowPage from './AlbumShowPage';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -63,7 +64,7 @@ export default class App extends Component {
                   firstHalfOfAlbums={this.state.firstHalf}
                 />
               </div>
-        )}
+            )}
           />
         </Switch>
       </div>

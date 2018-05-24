@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CardComponent from './CardComponent';
+
 export default class SecondHalf extends Component {
   componentDidMount() {
     if (!this.props.currentState) {
@@ -18,7 +19,7 @@ export default class SecondHalf extends Component {
   }
 
   render() {
-    let secondHalfAlbums = 'loading';
+    let secondHalfAlbums = <p className="loading">loading</p>;
     let nextLink = '';
     if (this.props.secondHalfOfAlbums !== null) {
       secondHalfAlbums = this.props.secondHalfOfAlbums.map((album, index) => {

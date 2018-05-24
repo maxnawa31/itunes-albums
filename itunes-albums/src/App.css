@@ -76,6 +76,9 @@ body{
   color:white;
 }
 
+.loading{
+  color: white;
+}
 .individual-album p {
   white-space: nowrap;
   overflow: hidden;
