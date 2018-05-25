@@ -27,7 +27,7 @@ body{
   display:flex;
   flex-direction: row;
   flex-wrap:wrap;
-  margin-left:20px;
+  margin-left:80px;
 }
 
 .album-cover{
